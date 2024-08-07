@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Página Inicial</title>
+</head>
+<body>
+    {% if error_message %}<!--esse % é o django que trabalha nele, para exibição do conteúdo p condicional-->
+    <p class="error">{{ error_message }}</p>
+    {% endif %}
+    {% if sucess_message %}
+    <p class="sucess">{{ sucess_message }}</p>
+    {% endif %}
+    <h2>Bem-vindo!</h2>
+    <p>Escolha uma opção:</p>
+    <ul>
+        <li><a href="{% url 'login' %}">Login</a></li>
+        <li><a href="{% url 'register' %}">Registro</a></li>
+    </ul>
+</body>
+</html>
