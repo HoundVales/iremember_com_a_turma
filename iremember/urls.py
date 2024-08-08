@@ -19,7 +19,7 @@ from myapp import views
 
 urlpatterns = [
     path('login/', views.login_view, name='login'),
-    path('', views.index, name='index'),
+    path('', views.user_details, name='user_details'),
     path('register/', views.register_view, name='register'),
     path('info_page/', views.info_page, name='info'),
 
