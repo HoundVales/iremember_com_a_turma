@@ -17,7 +17,10 @@ def index(request):
     return render(request, 'index.html')
 
 def login_view(request):
-    if request.method == 'POST':    
+    if request.method == 'POST':
+
+        url = reverse('info')
+    
 
         form = UserLoginForm(request.POST)
         if form.is_valid():
@@ -45,7 +48,7 @@ def login_view(request):
                 success_message2 = 'Operação realizada com sucesso'
                 
                 # Redirecionar para uma URL com parâmetros
-                url = reverse('info_page') + f'?api_data={api_data}&info_message={success_message2}'
+                url = reverse('info') + f'?api_data={api_data}&info_message={success_message2}'
                 return HttpResponseRedirect(url)
 
             else:
@@ -56,7 +59,7 @@ def login_view(request):
                 success_message2 = 'nao deu login'
                 
                 # Redirecionar para uma URL com parâmetros
-                url = reverse('info_page') + f'?api_data={api_data}&info_message={success_message2}'
+                url = reverse('info') + f'?api_data={api_data}&info_message={success_message2}'
                 return HttpResponseRedirect(url)
            
     else:
