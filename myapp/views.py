@@ -109,7 +109,7 @@ def user_details(request):
     #return HttpResponseRedirect(url)
 
    
-    id = 1
+    id = 14
     api_response = requests.get(f'https://api-python-tarde-37668b622097.herokuapp.com/usuarios/{id}')
     # Lógica de tratamento da resposta da API#joga para view index
 
