@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.http import HttpResponseRedirect
-from myapp.forms import UserLoginForm, UserRegistrationForm
+from myapp.forms.user_forms import  UserRegistrationForm,UserLoginForm
+
 import requests
 
 def login_view(request):
@@ -38,7 +39,7 @@ def register_view(request):
             }
             api_response = requests.post('https://api-python-tarde-37668b622097.herokuapp.com/register', json=data)
             api_data = api_response.json()
-            if api_response.status_code == 200:
+            if api_response.status_code == 201:
                 success_message = api_data
                 return render(request, 'index.html', {'api_data': api_data, 'sucess_message': success_message})
             else:
