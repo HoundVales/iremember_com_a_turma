@@ -7,7 +7,9 @@ def user_details(request):
     api_data = api_response.json()
     if api_response.status_code == 200:
         user_name = api_data.get('nome', 'Nome não disponível')
-        return render(request, 'user_details.html', {'api_data': api_data, 'user_name': user_name})
+        cpf = api_data.get('cpf', 'cpf não disponível')
+        email = api_data.get('email', 'email não disponível')
+        return render(request, 'user_details.html', {'api_data': api_data, 'user_name': user_name,'user_cpf': cpf,'user_email':email})
     else:
         info_message = api_data
         return render(request, 'info.html', {'info_message': info_message})
