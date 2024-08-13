@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.http import HttpResponseRedirect
-from myapp.forms import UserLoginForm, UserRegistrationForm
+from myapp.forms.user_forms import UserLoginForm, UserRegistrationForm
 import requests
 
 def login_view(request):
