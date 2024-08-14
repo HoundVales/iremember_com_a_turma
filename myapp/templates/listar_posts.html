@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Listagem de Posts</title>
+</head>
+<body>
+    <h1>Posts</h1>
+    <ul>
+        {% for post in posts %}
+            <li>
+                <h2>{{ post.titulo }}</h2>
+                <p>{{ post.conteudo }}</p>
+                <p><small>Publicado em: {{ post.data_publicacao }}</small></p>
+                <!-- Ajuste o template conforme os dados retornados pela API -->
+            </li>
+        {% empty %}
+            <li>Não há posts disponíveis.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

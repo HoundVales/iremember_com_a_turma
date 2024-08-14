@@ -3,6 +3,7 @@ from myapp.views.home_views import index, info_page
 from myapp.views.auth_views import login_view, register_view
 from myapp.views.user_views import user_details
 from myapp.views.create_post_view import create_post
+from myapp.views.posts_views import listar_posts
 
 urlpatterns = [
     #path('', index, name='index'),
@@ -11,5 +12,7 @@ urlpatterns = [
     path('register/', register_view, name='register'),
     path('user-details/', user_details, name='user_details'),
     #path('create_post/', create_post, name='create_post'),
-    path('', create_post, name='create_post'),
+    #path('', create_post, name='create_post'),
+    #path('posts/', listar_posts, name='listar_posts')
+    path('', listar_posts, name='listar_posts')
 ]
